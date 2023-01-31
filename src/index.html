@@ -6,7 +6,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= htmlWebpackPlugin.options.title%></title>
 </head>
-<body>
-  <h1>This is a test</h1>
+<body class="container">
+  <header class="row">
+    <h1>Leaderboard</h1>
+  </header>
+  <main class="row">
+    <div class="col-8">
+      <div>
+        <h2>Recent scores</h2>
+        <button>Refresh</button>
+      </div>
+      <div>
+        <ol class="list-group list-group-numbered">
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div>
+              <h3>Fullname Lastname</h3>
+              <p>100</p>
+            </div>
+            <i class="fa-solid fa-arrows-rotate"></i>
+            <span class="badge bg-primary rounded-pill">14</span>
+          </li>
+          <li>
+            <p>Fullname Lastname</p>
+            <p>100</p>
+          </li>
+          <li>
+            <p>Fullname Lastname</p>
+            <p>100</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <div class="col-4">
+      <h2>Add your score</h2>
+      <input type="text" placeholder="Your name">
+      <input type="text" placeholder="Your score">
+      <button>Submit</button>
+    </div>
+  </main>
+  <footer class="row">
+    <p>Done as part of Microverse program, Module 2, Week 4</p>
+  </footer>
 </body>
 </html>
