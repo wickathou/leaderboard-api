@@ -31,7 +31,7 @@ SCSS
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://wickathou.github.io/leaderboard-api/dist/)
+- [Live Demo Link](https://wickathou.github.io/leaderboard-api/)
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
