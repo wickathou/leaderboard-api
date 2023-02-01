@@ -12,6 +12,7 @@
   - [👥 Author ](#-author-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
   - [🙏 Acknowledgments ](#-acknowledgments-)
   - [📝 License ](#-license-)
 
@@ -70,6 +71,10 @@ To run the project, use the command
 ## 🤝 Contributing <a name="contributing"></a>
 
 Feel free to check the [issues page](https://github.com/wickathou/leaderboard-api/issues).
+
+## ⭐️ Show your support <a name="support"></a>
+
+If you like this project feel free to fork it or star it
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
