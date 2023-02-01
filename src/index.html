@@ -14,7 +14,10 @@
     <div class="col-8">
       <div class="container">
         <div class="row my-3">
-          <h2 class="col-10">Recent scores</h2>
+          <h2 class="col-9">Recent scores</h2>
+          <div class="col-1">
+            <span id="get-scores-loading" role="status" class="text-primary"></span>
+          </div>
           <button type="button" id="get-scores" class="btn btn-primary col-2">Refresh</button>
         </div>
         <div class="row">
@@ -22,7 +25,7 @@
           <h6 class="col-7">Name</h6>
           <h6 class="col-2 text-center">Score</h6>
         </div>
-        <ol class="row list-group list-group-numbered">
+        <ol id="leaderboard-entries" class="row list-group list-group-numbered">
           <li class="list-group-item d-flex justify-content-between align-items-start">
             <span class="col-2"></span>
             <div class="col-8">
