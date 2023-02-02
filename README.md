@@ -65,8 +65,8 @@ To run the project, use the command
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Browser data storage]**
-- [ ] **[New live view]**
+- [ ] **[Delete userscore entry]**
+- [ ] **[Update userscore information]**
 
 ## 🤝 Contributing <a name="contributing"></a>
 
