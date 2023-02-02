@@ -1,8 +1,6 @@
 import Score from './scores.js';
 
-const getUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/S7kVdYcJIymZZTmBFEM0/scores/'
-
-
+const scoresUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/S7kVdYcJIymZZTmBFEM0/scores/'
 
 
 export default class Leaderboard {
@@ -15,10 +13,34 @@ export default class Leaderboard {
   #addToDom = (scoreElement) => {
     this.listElement.appendChild(scoreElement);
   }
+
+  #clearDom = () => {
+    this.listElement.innerHTML = ''
+  }
+
+  addData = async (user, score) => {
+    try {
+      const res = await fetch(scoresUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          'user': user,
+          'score': score
+        })
+      })
+      const data = res.json()
+      console.log(data.result);
+      return data.result
+    } catch (error) {
+      console.log(error);
+    }
+  }
   
   getData = async () => {
     try {
-      const res = await fetch(getUrl)
+      const res = await fetch(scoresUrl)
       const data = await res.json()
       return data.result
     } catch (error) {
@@ -35,7 +57,7 @@ export default class Leaderboard {
       this.count += 1
       this.scoreList.push(new Score(entry.user, entry.score))
     });
-    console.log(this.scoreList);
+    this.#clearDom()
     this.generateDOM()
   }
 
@@ -54,8 +76,8 @@ export default class Leaderboard {
   }
 
   generateDOM = () => {
-    this.scoreList.forEach(score => {
-      this.#addToDom(this.scoreEntryDOM(score))
-    });
+    for (let i = 0; i < this.scoreList.length && i < 11; i++) {
+      this.#addToDom(this.scoreEntryDOM(this.scoreList[i]))      
+    }
   }
 }

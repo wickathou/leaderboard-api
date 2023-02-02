@@ -9,13 +9,46 @@
 //   .then(response => response.json())
 //   .then(json => console.log(json));
 
-const getScores = (btn,loading) => {
+const userRegex = /^\S/;
+const scoreRegex = /^[1-9][0-9]{0,2}$/;
+
+const loadingOn = (btn, loading) => {
+  loading.classList.add('spinner-border')
+  btn.disabled = true
+}
+
+const loadingOff = (btn, loading) => {
+  loading.classList.remove('spinner-border')
+  btn.disabled = false
+}
+
+
+export const getScores = async (btn,loading,callback) => {
   console.log(btn);
-  btn.addEventListener('click', () => {
-    loading.classList.toggle('spinner-border')
-    btn.disabled = true
-    getData()
+  btn.addEventListener('click', async (e) => {
+    loadingOn(btn, loading)
+    await callback().then((res) => {
+      console.log(res);
+    }).catch((error) => {
+      console.log(error);
+    });
+    loadingOff(btn, loading)
   })
 }
 
-export default getScores
+export const postScores = async (btn, userData, scoreData, loading, callback) => {
+  btn.addEventListener('click', async (e) => {
+    e.preventDefault()
+    if (scoreRegex.test(scoreData.value) && userRegex.test(userData.value)) {
+      loadingOn(btn, loading)
+      // await callback(user, score).then((res) => {
+      //   console.log(res);
+      // }).catch((error) => {
+      //   console.log(error);
+      // })
+      // loadingOff(btn, loading)
+    } else {
+      console.log('No user or score');
+    }
+  })
+}

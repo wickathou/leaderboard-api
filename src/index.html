@@ -51,10 +51,15 @@
       </div>
     </div>
     <div class="col-4 gy-2">
-      <h2>Add your score</h2>
-      <input type="text" placeholder="Your name">
-      <input type="text" placeholder="Your score">
-      <button type="button" class="btn btn-primary ">Submit</button>
+      <form action="">
+        <h2>Add your score</h2>
+        <input class="mb-2 form-control" type="text" placeholder="Your username: eg Wickathou" name="user" id="new-user">
+        <input class="mb-2 form-control" type="text" placeholder="Your score: Min 10 to Max 999" name="score" id="new-score">
+        <div class="d-flex">
+          <button type="submit" class="btn btn-primary" id="post-scores">Submit</button>
+          <span id="post-scores-loading" role="status" class="ms-2 text-primary"></span>
+        </div>
+      </form>
     </div>
   </main>
   <footer class="row">
