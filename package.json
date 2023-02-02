@@ -7,7 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "start": "webpack serve --open",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "html-linter": "npx hint .",
+    "css-linter": "npx stylelint \"**/*.{css,scss}\"",
+    "js-linter": "npx eslint ."
   },
   "repository": {
     "type": "git",
@@ -23,8 +26,12 @@
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
     "autoprefixer": "^10.4.13",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^9.1.2",
     "css-loader": "^6.7.3",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.27.5",
     "hint": "^7.1.3",
     "html-webpack-plugin": "^5.5.0",
     "postcss": "^8.4.21",
