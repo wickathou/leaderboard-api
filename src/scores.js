@@ -1,7 +1,7 @@
 export default class Score {
-  constructor(user, score) {
+  constructor(user, score, position) {
     this.user = user
     this.score = score
-    this.index
+    this.position = position
   }
 }

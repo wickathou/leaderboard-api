@@ -4,3 +4,11 @@
 .hidden {
   display: none;
 }
+
+.valid {
+  border-color: rgb(0, 213, 255);
+}
+
+.not-valid {
+  border-color: rgb(255, 127, 174);
+}

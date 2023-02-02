@@ -31,7 +31,7 @@ export default class Leaderboard {
         })
       })
       const data = res.json()
-      console.log(data.result);
+      this.refreshList()
       return data.result
     } catch (error) {
       console.log(error);
@@ -48,14 +48,18 @@ export default class Leaderboard {
     }
   }
 
+  #sortList = (list) => {
+    list.sort((a, b) => b.score - a.score)
+  }
+
   refreshList = async () => {
     const listData = await this.getData()
-    console.log(listData);
+    this.#sortList(listData)
     this.scoreList = []
     this.count = 0
     listData.forEach(entry => {
       this.count += 1
-      this.scoreList.push(new Score(entry.user, entry.score))
+      this.scoreList.push(new Score(entry.user, entry.score, this.count))
     });
     this.#clearDom()
     this.generateDOM()
@@ -67,7 +71,7 @@ export default class Leaderboard {
     // li.id = `score-${score.index}`;
     li.innerHTML = 
       `
-      <span class="col-2"></span>
+      <span class="col-2">${entry.position}</span>
       <div class="col-8">
         <h4>${entry.user}</h4>
       </div>
@@ -76,7 +80,7 @@ export default class Leaderboard {
   }
 
   generateDOM = () => {
-    for (let i = 0; i < this.scoreList.length && i < 11; i++) {
+    for (let i = 0; i < this.scoreList.length && i < 10; i++) {
       this.#addToDom(this.scoreEntryDOM(this.scoreList[i]))      
     }
   }
