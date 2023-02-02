@@ -67,7 +67,7 @@ export default class Leaderboard {
   scoreEntryDOM = (entry) => {
     const li = document.createElement('li');
     li.classList = 'list-group-item d-flex justify-content-between align-items-start';
-    // li.id = `score-${score.index}`;
+    li.id = `score-${entry.position}`;
     li.innerHTML = `
       <span class="col-2">${entry.position}</span>
       <div class="col-8">
