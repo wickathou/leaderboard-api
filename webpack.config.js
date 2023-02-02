@@ -38,7 +38,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Leaderboard',
+      title: 'Leaderboard API',
       template: './src/index.html',
     }),
   ],
